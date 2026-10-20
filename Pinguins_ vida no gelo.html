@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pinguins: vida no gelo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8f1f5;--surface:#f7fbfd;--ink:#0d2233;--muted:#4a6272;--ice:#bcd6e2;--bill:#f2a900;--line:#c9dce5;
+--d:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--b:'Newsreader',Georgia,serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a26;--surface:#12293a;--ink:#e6f1f6;--muted:#9bb5c4;--ice:#2a475b;--line:#24404f}}
+:root[data-theme="dark"]{--bg:#0b1a26;--surface:#12293a;--ink:#e6f1f6;--muted:#9bb5c4;--ice:#2a475b;--line:#24404f}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.15rem/1.65 var(--b)}
+h1,h2,h3{font-family:var(--d);line-height:1.05;margin:0}
+main,header,section,footer{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--bill);outline-offset:3px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:end;padding-top:4rem;padding-bottom:3rem}
+.hero h1{font-size:clamp(3rem,10vw,7rem);font-weight:800;letter-spacing:-.03em}
+.hero p{max-width:34rem;color:var(--muted);margin:1.25rem 0 0}
+.hero svg{width:100%;max-height:26rem}
+section{padding-top:3.5rem;padding-bottom:1rem}
+h2{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{max-width:38rem;color:var(--muted);margin:0 0 1.75rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+.tabs button{font:500 1rem var(--d);background:var(--surface);color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:.55rem 1.1rem;cursor:pointer;min-height:44px}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:1.5rem;background:var(--surface);border:2px solid var(--line);border-radius:1.25rem;padding:1.5rem}
+.scale{position:relative;height:20rem;border-bottom:3px solid var(--ink);background:
+ linear-gradient(var(--line),var(--line)) 0 25%/100% 1px no-repeat,
+ linear-gradient(var(--line),var(--line)) 0 75%/100% 1px no-repeat,
+ linear-gradient(var(--line),var(--line)) 0 50%/100% 1px no-repeat}
+.scale i{position:absolute;left:.25rem;font:500 .8rem var(--d);color:var(--muted);font-style:normal}
+.scale svg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);transition:height .5s cubic-bezier(.3,1.3,.5,1);height:50%;width:auto}
+.info h3{font-size:2rem;font-weight:800}
+.info .sci{font-style:italic;color:var(--muted);margin:.2rem 0 1rem}
+.info dl{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;margin:0 0 1rem;font-size:1.05rem}
+.info dt{font:500 .95rem var(--d);color:var(--muted)}
+.info dd{margin:0}
+.info p{margin:0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem 2rem;margin:0;padding:0;list-style:none}
+.facts li{border-top:3px solid var(--ink);padding-top:.75rem}
+.facts b{display:block;font:800 1.35rem var(--d);margin-bottom:.25rem}
+.threat{background:var(--ink);color:var(--bg);border-radius:1.25rem;padding:2rem;margin-top:.5rem}
+.threat h2{color:var(--bg)}
+.threat p{max-width:40rem;margin:0 0 1rem}
+.threat strong{color:var(--bill)}
+footer{padding-top:2.5rem;padding-bottom:3rem;color:var(--muted);font-size:1rem}
+@media (max-width:720px){.hero,.stage{grid-template-columns:1fr}.hero{padding-top:2.5rem}.hero svg{max-height:14rem}.scale{height:15rem}}
+@media (prefers-reduced-motion:reduce){.scale svg{transition:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div>
+    <h1>Pinguins</h1>
+    <p>Aves que não voam, mas que nadam como poucas. Vivem só no Hemisfério Sul, do gelo da Antártida às praias das Ilhas Galápagos.</p>
+  </div>
+  <svg viewBox="0 0 200 260" role="img" aria-label="Ilustração de um pinguim-imperador">
+    <ellipse cx="100" cy="248" rx="70" ry="8" fill="var(--ice)"/>
+    <path d="M100 18c-30 0-48 28-48 66 0 30-14 50-14 92 0 36 22 62 62 62s62-26 62-62c0-42-14-62-14-92 0-38-18-66-48-66z" fill="#0d2233"/>
+    <path d="M100 96c-24 0-36 24-36 62 0 34 14 70 36 70s36-36 36-70c0-38-12-62-36-62z" fill="#f7fbfd"/>
+    <path d="M70 70c8 12 22 18 30 18s22-6 30-18c-4 22-16 34-30 34S74 92 70 70z" fill="#f2a900"/>
+    <path d="M88 62l12 22 12-22z" fill="#e07b00"/>
+    <circle cx="86" cy="52" r="4" fill="#f7fbfd"/><circle cx="114" cy="52" r="4" fill="#f7fbfd"/>
+    <circle cx="87" cy="52" r="1.8" fill="#0d2233"/><circle cx="113" cy="52" r="1.8" fill="#0d2233"/>
+    <path d="M52 110c-18 30-22 70-14 96 10-8 18-40 20-70z" fill="#0d2233"/>
+    <path d="M148 110c18 30 22 70 14 96-10-8-18-40-20-70z" fill="#0d2233"/>
+    <ellipse cx="78" cy="246" rx="18" ry="6" fill="#e07b00"/><ellipse cx="122" cy="246" rx="18" ry="6" fill="#e07b00"/>
+  </svg>
+</header>
+
+<main>
+<section aria-labelledby="t-especies">
+  <h2 id="t-especies">Compare os tamanhos</h2>
+  <p class="lead">Existem cerca de 18 espécies. Escolha uma e veja sua altura na mesma escala.</p>
+  <div class="tabs" role="group" aria-label="Espécies" id="tabs"></div>
+  <div class="stage">
+    <div class="scale" id="scale" aria-hidden="true">
+      <i style="top:-.1rem">120 cm</i><i style="top:25%">90 cm</i><i style="top:50%">60 cm</i><i style="top:75%">30 cm</i>
+    </div>
+    <div class="info" aria-live="polite" id="info"></div>
+  </div>
+</section>
+
+<section aria-labelledby="t-fatos">
+  <h2 id="t-fatos">Feitos para a água</h2>
+  <ul class="facts">
+    <li><b>Asas viraram nadadeiras</b>Ossos densos e maciços ajudam a mergulhar sem flutuar.</li>
+    <li><b>Até 36 km/h</b>O pinguim-gentoo é o mais veloz debaixo d’água.</li>
+    <li><b>Mergulhos de 500 m</b>O pinguim-imperador passa dos 500 metros de profundidade e segura o fôlego por mais de 20 minutos.</li>
+    <li><b>Pais dedicados</b>Entre os imperadores, o macho choca o ovo sobre os pés durante cerca de 65 dias do inverno antártico.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="t-futuro">
+  <div class="threat">
+    <h2 id="t-futuro">O gelo está mudando</h2>
+    <p>Muitas espécies dependem do <strong>gelo marinho</strong> para reproduzir e do krill e dos peixes para comer. O aquecimento dos oceanos, a pesca excessiva e a poluição por óleo pressionam as colônias.</p>
+    <p>Proteger áreas marinhas e reduzir emissões são as medidas que os cientistas mais apontam para dar futuro aos pinguins.</p>
+  </div>
+</section>
+</main>
+<footer>Medidas são aproximadas e variam entre indivíduos.</footer>
+
+<script>
+var S=[
+{n:"Imperador",s:"Aptenodytes forsteri",h:110,w:"22 a 40 kg",l:"Antártida",d:"O maior de todos. Enfrenta temperaturas de até −40 °C e se aquece em grandes grupos."},
+{n:"Rei",s:"Aptenodytes patagonicus",h:90,w:"10 a 16 kg",l:"Ilhas subantárticas",d:"Parece um imperador menor, com manchas laranja bem vivas no pescoço."},
+{n:"Adélia",s:"Pygoscelis adeliae",h:70,w:"4 a 5 kg",l:"Costa da Antártida",d:"Tem um anel branco em volta dos olhos e constrói ninhos de pedrinhas."},
+{n:"Galápagos",s:"Spheniscus mendiculus",h:50,w:"cerca de 2,5 kg",l:"Ilhas Galápagos",d:"O único que vive perto da linha do Equador, nas águas frias das ilhas."},
+{n:"Pequeno",s:"Eudyptula minor",h:33,w:"cerca de 1,5 kg",l:"Austrália e Nova Zelândia",d:"O menor pinguim do mundo. Sai da água ao anoitecer e caminha até a toca."}
+];
+var tabs=document.getElementById('tabs'),scale=document.getElementById('scale'),info=document.getElementById('info');
+var svg='<svg viewBox="0 0 200 260" aria-hidden="true"><path d="M100 18c-30 0-48 28-48 66 0 30-14 50-14 92 0 36 22 62 62 62s62-26 62-62c0-42-14-62-14-92 0-38-18-66-48-66z" fill="#0d2233"/><path d="M100 96c-24 0-36 24-36 62 0 34 14 70 36 70s36-36 36-70c0-38-12-62-36-62z" fill="#f7fbfd"/><path d="M70 70c8 12 22 18 30 18s22-6 30-18c-4 22-16 34-30 34S74 92 70 70z" fill="#f2a900"/><path d="M88 62l12 22 12-22z" fill="#e07b00"/><circle cx="86" cy="52" r="4" fill="#f7fbfd"/><circle cx="114" cy="52" r="4" fill="#f7fbfd"/><ellipse cx="78" cy="246" rx="18" ry="6" fill="#e07b00"/><ellipse cx="122" cy="246" rx="18" ry="6" fill="#e07b00"/></svg>';
+scale.insertAdjacentHTML('beforeend',svg);
+var pg=scale.querySelector('svg');
+function show(i){
+  var p=S[i];
+  pg.style.height=(p.h/120*100)+'%';
+  [].forEach.call(tabs.children,function(b,k){b.setAttribute('aria-pressed',k===i)});
+  info.innerHTML='<h3>'+p.n+'</h3><p class="sci">'+p.s+'</p><dl><dt>Altura</dt><dd>cerca de '+p.h+' cm</dd><dt>Peso</dt><dd>'+p.w+'</dd><dt>Onde vive</dt><dd>'+p.l+'</dd></dl><p>'+p.d+'</p>';
+}
+S.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.textContent=p.n;b.onclick=function(){show(i)};tabs.appendChild(b)});
+show(0);
+</script>
+</body>
+</html>
